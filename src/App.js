@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 //コンポーネントの作り方
@@ -10,7 +11,7 @@ import React from 'react';
 const App = ()=>{
   const profiles = [
     {name:"taro",age:10},
-    {name:"hanako",age:21},
+    {name:"aki",age:21}
   ]
 
   return(
@@ -28,5 +29,14 @@ const User = (props) => {
   return <div>Hi , I am {props.name}, and {props.age} years old!</div>
 }
 
+// User.propTypes = {
+//   name: PropTypes.string,
+//   age: PropTypes.number
+// }
+
+User.propTypes = {
+  name:PropTypes.string,
+  age:PropTypes.number.isRequired
+}
 
 export default App;
